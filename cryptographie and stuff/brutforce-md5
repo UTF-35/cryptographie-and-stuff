@@ -1,0 +1,10 @@
+import hashlib
+
+hash_cible = "met ton hash md5 ici "
+dictionnaire = ["admin", "password", "123456", "azerty"]#ou importe ton dico
+
+for mot in dictionnaire:
+    test = hashlib.md5(mot.encode()).hexdigest()
+    if test == hash_cible:
+        print(f"= : {mot}")
+        break

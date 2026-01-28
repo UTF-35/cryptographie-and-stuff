@@ -1,0 +1,15 @@
+from Cryptodome.Cipher import AES
+import os
+
+cle = os.urandom(32) 
+source = "image.jpg"
+cible = "image.enc"
+#au dessus import ton image
+outil = AES.new(cle, AES.MODE_EAX)
+with open(source, "rb") as f:
+    donnees = f.read()
+secret, mac = outil.encrypt_and_digest(donnees)
+with open(cible, "wb") as f:
+    f.write(outil.nonce)
+    f.write(mac)
+    f.write(secret)
