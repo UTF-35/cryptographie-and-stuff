@@ -1,2 +1,3 @@
 # cryptographie-and-stuff
-le bordel python 
+le bordel python
+La plupart fontionne pas vraiment....
